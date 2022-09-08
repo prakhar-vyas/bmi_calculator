@@ -6,14 +6,15 @@ let weight = document.getElementById("weight");
 let displaybmicategory = document.getElementById("displaybmicategory");
 let displaybmi = document.getElementById("bmi");
 
-
 function submit()
 {
-      if(age.value == "" || height.value == "" || weight.value == "" || (female.checked==false && male.checked==false))
+      let regex = /([0-9]{1,2})/;
+     result = regex.test(age.value);
+      if(age.value == "" || height.value == "" || weight.value == "" || (female.checked == false && male.checked == false))
       {
             alert("All values are required")
       }
-      else{  
+      else if(result){  
             ht = (height.value/100) * (height.value/100);
             bmi = weight.value/ht;
             bmi = bmi.toFixed(2);
@@ -46,5 +47,12 @@ function submit()
             height.value="";
             weight.value="";
             document.querySelector('input[name="gender"]:checked').checked = false;
+      }
+      else{
+         alert("Please enter proper values");
+         age.value="";
+         height.value="";
+         weight.value="";
+         document.querySelector('input[name="gender"]:checked').checked = false;
       }
 }

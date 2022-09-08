@@ -12,18 +12,16 @@
       <h1>Body Mass Index Calculator</h1>
       <div class="box">
         <input type="text" id="age" /><label id="sage">Age</label>
-        <input
-          type="radio"
-          name="gender"
-          id="female"
-        /><label id="fgender" for="female">Female</label>
-        <input
-          type="radio"
-          name="gender"
-          id="male"
-        /><label id="mgender" for="male">Male</label>
+
+        <input type="radio" name="gender" id="female" />
+        <label id="fgender" for="female">Female</label>
+
+        <input type="radio" name="gender" id="male" />
+        <label id="mgender" for="male">Male</label>
+
         <br />
         <input type="text" id="height" /><label id="theight">Height(cm)</label>
+        
         <input type="text" id="weight" /><label id="tweight">Weight(kg)</label>
         <br />
         <button id="btn" onclick="submit()">Submit</button>
